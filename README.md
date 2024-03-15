@@ -1,5 +1,5 @@
-# Costa Rica Stock Exchange Data Acquisition
-Costa Rica Stock Exchange session data acquisition process.
+# Costa Rica Stock Exchange Data Harvester
+Costa Rica Stock Exchange session data harvester.
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat&logo=pandas&logoColor=white)
