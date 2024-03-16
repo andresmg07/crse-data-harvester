@@ -18,18 +18,19 @@ def path_formatter_util(path):
 def request_url_formatter_util(date):
     """
     Utilitarian function that formats the request URL for data retrieval from the Costa Rica Stock Exchange.
-    :param date date: Request target date
+    :param datetime.date date: Request target date
     :return: str
     """
+    print(date)
     return f'''https://www.bolsacr.com/sites/default/files/boletines/emision/{date.strftime("%Y")}{date.strftime(
         "%m")}/{date.strftime("%Y%m%d")}.XLSX'''
 
 
-def target_directory_formatter_util(start_date, end_date):
+def target_directory_name_formatter_util(start_date, end_date):
     """
     Utilitarian function that formats data harvesting target directory.
-    :param date start_date: Data harvesting start date (used to name the target directory)
-    :param date end_date: Data harvesting start date (used to name the target directory)
+    :param datetime.date start_date: Data harvesting start date (used to name the target directory)
+    :param datetime.date end_date: Data harvesting start date (used to name the target directory)
     :return: str
     """
-    return f'''{start_date.strftime("%d%m%Y")}-{end_date.strftime("%d%m%Y") if int((end_date - start_date).days) > 2 else ""}'''
+    return f'''{start_date.strftime("%d%m%Y")}{"-" + end_date.strftime("%d%m%Y") if int((end_date - start_date).days) > 2 else ""}'''
