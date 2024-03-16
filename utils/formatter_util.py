@@ -12,8 +12,7 @@ def path_formatter_util(path):
     """
     if platform.system() == 'Windows':
         return path.replace('/', '\\')
-    else:
-        return path.replace('\\', '/')
+    return path.replace('\\', '/')
 
 
 def request_url_formatter_util(date):

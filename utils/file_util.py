@@ -2,6 +2,7 @@
 File manipulation utilitarian module.
 """
 import warnings
+
 from pandas import read_excel
 
 
@@ -14,7 +15,10 @@ def load_excel_file_util(file_path, initial_rows_skip_range=0):
     """
     with warnings.catch_warnings(record=True):
         warnings.simplefilter("always")
-        return read_excel(file_path, skiprows=initial_rows_skip_range, engine="openpyxl")
+        return read_excel(
+            file_path,
+            skiprows=initial_rows_skip_range,
+            engine="openpyxl")
 
 
 def save_excel_file_util(directory_path, file_name, content):
@@ -25,4 +29,5 @@ def save_excel_file_util(directory_path, file_name, content):
     :param bytes content: Contents to be saved into target file.
     :return: None
     """
-    open(f'''{directory_path}/{file_name}.xlsx''', "wb").write(content)
+    with open(f'''{directory_path}/{file_name}.xlsx''', "wb") as excel_file:
+        excel_file.write(content)

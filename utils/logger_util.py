@@ -13,14 +13,18 @@ def logger_setup_util(main_directory, log_origin):
     :param log_origin: File that triggers the log.
     :return: None
     """
-    log_file_path = main_directory + path_formatter_util("/logs/") + str(datetime.now()).replace(
-        ":", ".") + ".log"
+    log_file_path = main_directory + \
+        path_formatter_util("/logs/") + str(datetime.now()).replace(":", ".") + ".log"
 
-    open(log_file_path, "x")
-
-    logging.basicConfig(
-        handlers=[logging.FileHandler(log_file_path, mode="w")],
-        level=logging.DEBUG,
-        format="%(asctime)s - " + log_origin + " - %(name)s - %(levelname)s - %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S",
-    )
+    with open(log_file_path, "x", encoding="utf-8"):
+        logging.basicConfig(
+            handlers=[
+                logging.FileHandler(
+                    log_file_path,
+                    mode="w")],
+            level=logging.DEBUG,
+            format="%(asctime)s - " +
+            log_origin +
+            " - %(name)s - %(levelname)s - %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S",
+        )

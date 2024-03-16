@@ -1,7 +1,7 @@
 """
 General purpose utilitarian module.
 """
-from datetime import timedelta, datetime
+from datetime import timedelta
 
 
 def date_range_util(start_date, end_date):
