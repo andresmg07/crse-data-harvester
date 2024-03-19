@@ -48,7 +48,7 @@ def data_harvester_setup(start_date, end_date):
     harvest_target_directory_path = harvest_result_directory_path + harvest_target_directory_name
 
     if not path.exists(harvest_result_directory_path):
-        create_directory_util(harvest_target_directory_name, create_directory_util("harvesting_result"))
+        create_directory_util(harvest_target_directory_name, create_directory_util("harvest_result"))
     else:
         if not path.exists(harvest_target_directory_path):
             create_directory_util(harvest_target_directory_name)

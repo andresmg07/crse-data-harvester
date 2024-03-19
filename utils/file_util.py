@@ -28,10 +28,10 @@ def save_excel_file_util(directory_path, file_name, content):
     Utilitarian procedure that saves into disk an Excel file.
     :param str directory_path: Target directory path.
     :param str file_name: Target file name.
-    :param str content: Contents to be saved into target file.
+    :param bytes content: Contents to be saved into target file.
     :return: None
     """
-    with open(f'''{directory_path}/{file_name}.xlsx''', "w") as excel_file:
+    with open(f'''{directory_path}/{file_name}.xlsx''', "wb") as excel_file:
         excel_file.write(content)
 
 

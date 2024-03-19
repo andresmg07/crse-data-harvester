@@ -162,4 +162,5 @@ __pycache__
 
 # Project folders
 
-logs
+logs/
+harvest_result/
