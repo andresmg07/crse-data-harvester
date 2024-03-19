@@ -2,6 +2,7 @@
 Formatting utilitarian module.
 """
 import platform
+from datetime import timedelta
 
 
 def path_formatter_util(path):
@@ -33,4 +34,9 @@ def target_directory_name_formatter_util(start_date, end_date):
     :param datetime.date end_date: Data harvesting start date (used to name the target directory)
     :return: str
     """
-    return f'''{start_date.strftime("%d%m%Y")}{"-" + end_date.strftime("%d%m%Y") if int((end_date - start_date).days) > 2 else ""}'''
+
+    return f'''{date_string_formatter(start_date)}{"-" + date_string_formatter((end_date - timedelta(days=1))) if int((end_date - start_date).days) > 1 else ""}'''
+
+
+def date_string_formatter(date):
+    return date.strftime("%x").replace("/", "")

@@ -30,9 +30,7 @@ def logger_setup_util(log_origin):
                 logging.FileHandler(
                     log_file_path,
                     mode="w")],
-            level=logging.DEBUG,
-            format="%(asctime)s - " +
-            log_origin +
-            " - %(name)s - %(levelname)s - %(message)s",
+            level=logging.INFO,
+            format=f'''%(asctime)s | {log_origin} | %(levelname)s: %(message)s''',
             datefmt="%Y-%m-%d %H:%M:%S",
         )
