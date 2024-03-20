@@ -1,15 +1,29 @@
 # Costa Rica Stock Exchange Data Harvester
-Costa Rica Stock Exchange session data harvester.
+This module is an integral component of the **batch processing data pipeline** for the financial analysis web-based solution: [Inverso](https://inverso.andres-montero.me/).
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat&logo=pandas&logoColor=white)
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+## Description
+
+The **Costa Rica Stock Exchange Data Harvester** module is a crucial component of the [Inverso](https://inverso.andres-montero.me/) **batch processing data pipeline**. Its primary function is to gather, normalize and extracts relevant information from daily session records of the Costa Rica Stock Market via public web service provided by the Costa Rica Stock Exchange (Bolsa Nacional de Valores de Costa Rica). Once the information is processed it stores the data in .xlsx files for further processing and analysis.
+
+## Features
+
+## Data sourcing
+
+## Data normalization
+
+## Deploy architecture
+
+## Output
+
 ## Author
 
 **Andrés Montero Gamboa**<br>
-Computing engineering undergraduate<br>
+Computing Engineering Undergraduate<br>
 Instituto Tecnológico de Costa Rica<br>
 [LinkedIn](https://www.linkedin.com/in/andres-montero-gamboa) | [GitHub](https://github.com/andresmg07)
 
