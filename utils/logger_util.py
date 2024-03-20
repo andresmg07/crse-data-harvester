@@ -16,14 +16,18 @@ def logger_setup_util(log_origin):
     :return: None
     """
 
+    # Log directory definition.
     log_directory_path = getcwd() + path_formatter_util("/logs/")
 
+    # If log directory does not exist, it is created.
     if not path.exists(log_directory_path):
         create_directory_util("logs")
 
+    # Log file path definition.
     log_file_path = log_directory_path + \
         str(datetime.now()).replace(":", ".") + ".log"
 
+    # Logger setup.
     with open(log_file_path, "x", encoding="utf-8"):
         logging.basicConfig(
             handlers=[

@@ -39,4 +39,9 @@ def target_directory_name_formatter_util(start_date, end_date):
 
 
 def date_string_formatter(date):
+    """
+    Utilitarian function that converts date to basic formatting string.
+    :param datetime.date date: Date to be converted and formatted.
+    :return: str
+    """
     return date.strftime("%x").replace("/", "")
