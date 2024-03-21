@@ -1,5 +1,5 @@
 # Costa Rica Stock Exchange Data Harvester
-Costa Rica Stock Exchange (Bolsa Nacional de Valores de Costa Rica) data harvester for **batch processing data pipeline**.
+Costa Rica Stock Exchange (Bolsa Nacional de Valores de Costa Rica) data harvester for **ETL batch processing data pipeline**.
 This module is an integral component for the financial web-based application: [Inverso](https://inverso.andres-montero.me/).
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=white)
@@ -17,14 +17,14 @@ This module is an integral component for the financial web-based application: [I
     * [Relevant data extraction](#relevant-data-extraction)
     * [Data normalization](#data-normalization)
     * [Output](#output)
-  * [Deploy architecture](#deploy-architecture)
+  * [Intended deploy architecture](#intended-deploy-architecture)
   * [Legal disclaimer](#legal-disclaimer)
   * [Author](#author)
   * [License](#license)
 
 ## Description
 
-This module gathers, discriminate and normalizes relevant data from daily session records of the Costa Rica Stock Exchange.
+This module gathers, discriminates and normalizes relevant data from daily session records of the Costa Rica Stock Exchange.
 Data is retrieved from the public web API of the Costa Rica Stock Exchange.
 Once information has been transformed, it is prepared for storage in a data warehouse or data lake awaiting further processing and insight extraction.
 
@@ -55,9 +55,16 @@ As a result of the data harvesting process, the module generates enriched files 
 
 Examples of both the refined data files and the operations log from the data harvesting process are available for reference. These can be found in the repository folders labeled "harvest_result" and "logs".
 
-## Deploy architecture
+## Intended deploy architecture
+
+As stated before, this module constitutes an integral component within an Extract, Transform, Load (ETL) batch processing data pipeline. The intended deployment architecture for this data management system adheres to a **serverless paradigm** through Amazon Web Services (AWS) infrastructure. This arrangement underscores a scalable and resource-efficient approach, wherein computational resources are dynamically allocated and managed by AWS, thereby optimizing operational efficiency and minimizing administrative overhead.
+
+The AWS architecture diagram down below describes how data flows from different sources through an ETL data pipeline, and as result generates refined information files to be stored awaiting further processing.
 
 ![CRSE data harvester base deploy architecture](deploy_architecture_diagrams/crse-architecture-diagram%20-%20crse-architecture-diagram.jpg)
+
+A variation of the pipeline output model can be achieved through the establishment of a linkage between the resultant data lake and SQL or NoSQL databases, thereby enabling seamless integration with external services for consumption. Example given, the financial web-based application [Inverso](https://inverso.andres-montero.me/) retrieves Costa Rica Stock Exchange session record data from a relational database connected to the pipeline.  
+
 ![CRSE data harvester deploy architecture for interface consumption](deploy_architecture_diagrams/crse-architecture-diagram%20-%20crse-architecture-diagram-consumption.jpg)
 ![CRSE data harvester deploy architecture for end-user consumption](deploy_architecture_diagrams/crse-architecture-diagram%20-%20crse-architecture-diagram-end-user-consumption.jpg)
 
