@@ -57,6 +57,11 @@ Examples of both the refined data files and the operations log from the data har
 
 ## Deploy architecture
 
+![CRSE data harvester base deploy architecture](deploy_architecture_diagrams/crse-architecture-diagram%20-%20crse-architecture-diagram.jpg)
+![CRSE data harvester deploy architecture for interface consumption](deploy_architecture_diagrams/crse-architecture-diagram%20-%20crse-architecture-diagram-consumption.jpg)
+![CRSE data harvester deploy architecture for end-user consumption](deploy_architecture_diagrams/crse-architecture-diagram%20-%20crse-architecture-diagram-end-user-consumption.jpg)
+
+
 ## Legal disclaimer
   
 The Costa Rica Stock Exchange Data Harvester functions exclusively as a data processing tool, furnishing end-users with an interface for data consumption and manipulation. It explicitly disclaims any ownership or possession of the data processed through its system. Consequently, it absolves itself of any responsibility for the subsequent utilization and compliance with data rights by end-users.
