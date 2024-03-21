@@ -41,9 +41,8 @@ def save_dataframe_as_excel_file_util(directory_path, file_name, data_frame):
     try:
         with warnings.catch_warnings(record=True):
             warnings.simplefilter("always")
-            data_frame.to_excel(
-                f'''{directory_path}/{file_name}.xlsx''',
-                sheet_name=file_name,
+            data_frame.to_csv(
+                f'''{directory_path}/{file_name}.csv''',
                 index=False)
     except OSError as e:
         logging.error(
