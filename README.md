@@ -7,10 +7,24 @@ This module is an integral component for the financial web-based application: [I
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+## Table of contents
+
+* [Costa Rica Stock Exchange Data Harvester](#costa-rica-stock-exchange-data-harvester)
+  * [Table of contents](#table-of-contents)
+  * [Description](#description)
+  * [Data harvest phases](#data-harvest-phases)
+    * [Data sourcing](#data-sourcing)
+    * [Relevant data extraction](#relevant-data-extraction)
+    * [Data normalization](#data-normalization)
+    * [Output](#output)
+  * [Deploy architecture](#deploy-architecture)
+  * [Legal disclaimer](#legal-disclaimer)
+  * [Author](#author)
+  * [License](#license)
+
 ## Description
 
-This module gathers, 
-normalizes and extracts relevant information from daily session records of the Costa Rica Stock Exchange.
+This module gathers, discriminate and normalizes relevant data from daily session records of the Costa Rica Stock Exchange.
 Data is retrieved from the public web API of the Costa Rica Stock Exchange.
 Once information has been transformed, it is prepared for storage in a data warehouse or data lake awaiting further processing and insight extraction.
 
