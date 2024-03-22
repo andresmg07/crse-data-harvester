@@ -1,17 +1,20 @@
 # Costa Rica Stock Exchange Data Harvester
-Costa Rica Stock Exchange (Bolsa Nacional de Valores de Costa Rica) data harvester for **ETL batch processing data pipeline**.
-This module is an integral component for the financial web-based application: [Inverso](https://inverso.andres-montero.me/).
+This module represents the data acquisition stage of an **ETL batch processing data pipeline** from the Costa Rica Stock Exchange (Bolsa Nacional de Valores de Costa Rica).
+Also, it plays a fundamental role in the construction process of one of the several data sources for the financial analysis web application: [Inverso](https://inverso.andres-montero.me/).
 
+[![Inverso](https://img.shields.io/badge/Inverso-001d3d?style=flat&logoColor=001d3d&label=Financial%20analysis%20app)](https://inverso.andres-montero.me)
 ![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat&logo=pandas&logoColor=white)
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Table of contents
 
 * [Costa Rica Stock Exchange Data Harvester](#costa-rica-stock-exchange-data-harvester)
   * [Table of contents](#table-of-contents)
   * [Description](#description)
+  * [Related project: Inverso](#related-project-inverso)
   * [Data harvest phases](#data-harvest-phases)
     * [Data sourcing](#data-sourcing)
     * [Relevant data extraction](#relevant-data-extraction)
@@ -27,6 +30,10 @@ This module is an integral component for the financial web-based application: [I
 This module gathers, discriminates and normalizes relevant data from daily session records of the Costa Rica Stock Exchange.
 Data is retrieved from the public web API of the Costa Rica Stock Exchange.
 Once information has been transformed, it is prepared for storage in a data warehouse or data lake awaiting further processing and insight extraction.
+
+## Related project: Inverso
+
+**What is Inverso?** Inverso is a web application for Costa Rica financial market analysis. This application gathers valuable information from several data sources to build insightful dashboards regarding: stock market historical records, Costa Rica public debt details, sovereign yield curves, economic indicators, and indices. Get to know the **Inverso** web app by clicking on the following link [Inverso](https://inverso.andres-montero.me/).
 
 ## Data harvest phases
 
@@ -51,21 +58,30 @@ The dataset is normalized through string formatting, such as space removal, sepa
 
 ### Output
 
-As a result of the data harvesting process, the module generates enriched files in CSV format, prepared for storage in data lakes or data warehouses awaiting further processing and value extraction. Additionally, the system produces a detailed operations log for control purposes.
+As a result of the data harvesting process, the module generates enriched files in CSV format, prepared for storage in data lakes or data warehouses awaiting further processing and value extraction. Additionally, the system produces a detailed execution log for control purposes.
 
-Examples of both the refined data files and the operations log from the data harvesting process are available for reference. These can be found in the repository folders labeled "harvest_result" and "logs".
+Examples of both refined data files and the execution log from the data harvesting process are available for reference. These can be found in the repository folders labeled "harvest_result" and "logs".
 
 ## Intended deploy architecture
 
 As stated before, this module constitutes an integral component within an Extract, Transform, Load (ETL) batch processing data pipeline. The intended deployment architecture for this data management system adheres to a **serverless paradigm** through Amazon Web Services (AWS) infrastructure. This arrangement underscores a scalable and resource-efficient approach, wherein computational resources are dynamically allocated and managed by AWS, thereby optimizing operational efficiency and minimizing administrative overhead.
 
-The AWS architecture diagram down below describes how data flows from different sources through an ETL data pipeline, and as result generates refined information files to be stored awaiting further processing.
+The AWS architecture diagram down below describes how data flows from different sources through an ETL data pipeline, and 
+as a result generates refined information files to be stored awaiting further processing.
 
 ![CRSE data harvester base deploy architecture](deploy_architecture_diagrams/crse-architecture-diagram%20-%20crse-architecture-diagram.jpg)
 
-A variation of the pipeline output model can be achieved through the establishment of a linkage between the resultant data lake and SQL or NoSQL databases, thereby enabling seamless integration with external services for consumption. Example given, the financial web-based application [Inverso](https://inverso.andres-montero.me/) retrieves Costa Rica Stock Exchange session record data from a relational database connected to the pipeline.  
+An extension of the pipeline output model can be achieved through the establishment of a linkage between the resultant data 
+lake and SQL or NoSQL databases, thereby enabling seamless integration with external services for consumption.
+Example given,
+the financial web-based application [Inverso](https://inverso.andres-montero.me/) retrieves Costa Rica Stock Exchange session record data from a relational database
+connected to the pipeline.  
 
 ![CRSE data harvester deploy architecture for interface consumption](deploy_architecture_diagrams/crse-architecture-diagram%20-%20crse-architecture-diagram-consumption.jpg)
+
+Another model extension alternative presents an end-user consumption approach.
+The resultant files from the acquisition process undergo further processing for structured storage in a data warehouse. Through integration with services such as Athena and QuickSight, business intelligence dashboards are generated, primed for consumption, offering insights and analytics to end-users.
+
 ![CRSE data harvester deploy architecture for end-user consumption](deploy_architecture_diagrams/crse-architecture-diagram%20-%20crse-architecture-diagram-end-user-consumption.jpg)
 
 
