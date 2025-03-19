@@ -96,8 +96,8 @@ The primary goal of this exercise is to provide the developer a learning and res
 ## Author
 
 **Andrés Montero Gamboa**<br>
-Computing Engineering Undergraduate<br>
-Instituto Tecnológico de Costa Rica<br>
+Computing Engineer<br>
+Graduted from Tecnológico de Costa Rica<br>
 [LinkedIn](https://www.linkedin.com/in/andres-montero-gamboa) | [GitHub](https://github.com/andresmg07)
 
 ## License
